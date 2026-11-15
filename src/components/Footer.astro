@@ -1,0 +1,31 @@
+---
+import Logo from './Logo.astro';
+import { site, navigation } from '../config/site';
+---
+
+<footer>
+  <div class="wrap footer-top">
+    <div>
+      <a href="#inicio" aria-label="FastCharge, volver al inicio">
+        <Logo light />
+      </a>
+      <p>
+        Una iniciativa vinculada a <strong>Grupo ITTEL.</strong>
+      </p>
+    </div>
+    <nav aria-label="Navegación del pie">
+      {navigation.map(([label, id]) => (
+        <a href={`#${id}`}>{label}</a>
+      ))}
+    </nav>
+    <div class="footer-address">
+      <span>DIRECCIÓN CORPORATIVA</span>
+      <p>{site.corporateAddress}</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© {new Date().getFullYear()} FastCharge. Todos los derechos reservados.</span>
+    <span>Red en desarrollo · Imágenes conceptuales</span>
+    <a href="#inicio">Volver arriba ↑</a>
+  </div>
+</footer>

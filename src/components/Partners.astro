@@ -1,0 +1,29 @@
+---
+import { site, asset } from '../config/site';
+import { partners } from '../data/partners';
+---
+
+{site.commercialPreview && (
+  <section class="section wrap partners">
+    <div class="section-label">UBICACIONES ESTRATÉGICAS</div>
+    <div class="section-heading">
+      <h2>
+        Tu parada de siempre.
+        <br />
+        Una nueva energía.
+      </h2>
+      <p>
+        Integrar la carga a la gastronomía
+        <br />y a las estaciones de servicio.
+      </p>
+    </div>
+    <div class="partner-list">
+      {partners.map((p) => (
+        <article>
+          <img src={asset(p.logo)} alt={p.name} width="220" height="90" loading="lazy" />
+          <p>{p.caption}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+)}

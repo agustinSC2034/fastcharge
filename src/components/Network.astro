@@ -1,0 +1,50 @@
+---
+import { categories } from '../data/locations';
+---
+
+<section id="ubicaciones" class="network section">
+  <div class="wrap network-layout">
+    <div class="network-copy">
+      <div class="section-label">04 / NUESTRA RED</div>
+      <h2>
+        Siempre
+        <br />
+        en tu camino<span class="green-dot">.</span>
+      </h2>
+      <p class="lead">
+        La mejor ubicación es la que
+        <br />
+        ya forma parte de tu día.
+      </p>
+      <div class="network-filters" aria-label="Tipo de ubicación">
+        {categories.map((c, i) => (
+          <button aria-pressed={i === 0 ? 'true' : 'false'} data-category={c.id}>
+            {c.label}
+          </button>
+        ))}
+      </div>
+      <p id="network-description" aria-live="polite">
+        {categories[0].copy}
+      </p>
+      <div class="launch">
+        <span>2027</span>
+        <div>
+          Desarrollo previsto
+          <br />
+          de la red en Argentina
+        </div>
+      </div>
+      <p class="network-status" id="network-status">
+        Ubicaciones por confirmar · Sin estaciones operativas publicadas
+      </p>
+    </div>
+    <div class="map-frame">
+      <div id="network-map" role="region" aria-label="Mapa de Argentina, red en desarrollo">
+        <p class="map-loading">Argentina · Red en desarrollo</p>
+      </div>
+      <div class="map-caption">
+        <span class="status-dot"></span> Explorá el territorio de la próxima red
+      </div>
+    </div>
+  </div>
+</section>

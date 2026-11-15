@@ -1,0 +1,59 @@
+---
+import { asset } from '../config/site';
+---
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <picture>
+    <source media="(max-width: 650px)" srcset={asset('media/hero-800.webp')} />
+    <img
+      class="hero-image"
+      src={asset('media/hero-1600.webp')}
+      alt="Un vehículo eléctrico en un recorrido tranquilo"
+      width="1600"
+      height="900"
+      fetchpriority="high"
+    />
+  </picture>
+  <video
+    id="hero-video"
+    muted
+    loop
+    playsinline
+    preload="none"
+    poster={asset('media/hero-1600.webp')}
+    data-src={asset('media/hero.mp4')}
+    aria-hidden="true"
+  ></video>
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">
+      <span></span> Red de carga eléctrica en Argentina
+    </p>
+    <h1 id="hero-title">
+      La energía
+      <br />
+      que te mueve<span>.</span>
+    </h1>
+    <p class="hero-description">
+      Carga rápida para vehículos eléctricos,
+      <br class="desktop-break" /> en los lugares donde más la necesitás.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#fastcharge">
+        Descubrí FastCharge <span>↗</span>
+      </a>
+      <a class="text-link" href="#ubicaciones">
+        Explorá la red <span>↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <span>Un nuevo camino comienza en 2027</span>
+    <button id="video-toggle" hidden aria-label="Pausar video de fondo">
+      Ⅱ Pausar
+    </button>
+    <a href="#fastcharge" aria-label="Ir a conocer FastCharge">
+      Deslizá para explorar ↓
+    </a>
+  </div>
+</section>

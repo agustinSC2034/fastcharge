@@ -1,0 +1,94 @@
+---
+import { site } from '../config/site';
+---
+
+<section class="contact-section section" id="contacto">
+  <div class="wrap contact-layout">
+    <div>
+      <div class="section-label">07 / CONVERSEMOS</div>
+      <h2>
+        Conectemos
+        <br />
+        el futuro de
+        <br />
+        la movilidad<span class="green-dot">.</span>
+      </h2>
+      <p class="lead">
+        Las grandes redes empiezan
+        <br />
+        con una conversación.
+      </p>
+      <p>
+        ¿Tenés un espacio, una idea o un proyecto?
+        <br />
+        Preparemos el próximo paso.
+      </p>
+    </div>
+    <form id="contact-form" data-endpoint={site.contactEndpoint}>
+      <div class="form-row">
+        <label>
+          Nombre <span>*</span>
+          <input name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre" />
+        </label>
+        <label>
+          Empresa
+          <input
+            name="company"
+            autocomplete="organization"
+            maxlength="150"
+            placeholder="Tu empresa"
+          />
+        </label>
+      </div>
+      <label>
+        Email <span>*</span>
+        <input
+          type="email"
+          name="email"
+          autocomplete="email"
+          required
+          maxlength="200"
+          placeholder="nombre@empresa.com"
+        />
+      </label>
+      <label>
+        Motivo de consulta
+        <select name="reason">
+          <option>Consulta comercial</option>
+          <option>Instalaciones</option>
+          <option>Alianzas</option>
+          <option>Información general</option>
+        </select>
+      </label>
+      <label>
+        Mensaje <span>*</span>
+        <textarea
+          name="message"
+          required
+          minlength="10"
+          maxlength="3000"
+          rows="4"
+          placeholder="Contanos sobre tu proyecto"
+        ></textarea>
+      </label>
+      <div class="honeypot" aria-hidden="true">
+        <label>
+          No completar
+          <input name="website" tabindex="-1" autocomplete="off" />
+        </label>
+      </div>
+      <p class="form-note">
+        {site.contactEndpoint
+          ? 'Usaremos tus datos únicamente para responder tu consulta.'
+          : 'Mientras habilitamos el canal de recepción, podés descargar tu consulta para compartirla con tu contacto de FastCharge. Los datos permanecen en tu dispositivo.'}
+      </p>
+      <button type="submit" class="button dark full">
+        {site.contactEndpoint ? 'Enviar consulta' : 'Descargar mi consulta'} <span>↗</span>
+      </button>
+      <p id="form-status" role="status" aria-live="polite"></p>
+      <noscript>
+        <p>Activá JavaScript para preparar la consulta. No hay envío automático.</p>
+      </noscript>
+    </form>
+  </div>
+</section>

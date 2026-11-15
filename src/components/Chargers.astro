@@ -1,0 +1,90 @@
+---
+import { chargers } from '../data/chargers';
+import { asset } from '../config/site';
+---
+
+<section id="soluciones" class="chargers-section section">
+  <div class="wrap">
+    <div class="section-label">02 / SOLUCIONES DE CARGA</div>
+    <div class="section-heading">
+      <h2>
+        La potencia adecuada
+        <br />
+        para cada parada<span class="green-dot">.</span>
+      </h2>
+      <p>
+        De la rutina al próximo viaje.
+        <br />
+        Explorá las alternativas de nuestra propuesta.
+      </p>
+    </div>
+    <div class="charger-tabs" role="tablist" aria-label="Potencia del cargador">
+      {chargers.map((c, i) => (
+        <button
+          role="tab"
+          id={`power-${i}`}
+          aria-controls={`charger-${i}`}
+          aria-selected={i === 5 ? 'true' : 'false'}
+          tabindex={i === 5 ? 0 : -1}
+          data-charger={i}
+        >
+          {c.power} <span>kW</span>
+        </button>
+      ))}
+    </div>
+    <div class="charger-stage">
+      {chargers.map((c, i) => (
+        <div
+          class="charger-panel"
+          id={`charger-${i}`}
+          role="tabpanel"
+          aria-labelledby={`power-${i}`}
+          hidden={i !== 5}
+          tabindex="0"
+        >
+          <div class="charger-info">
+            <p class="technology-type">
+              <span></span>
+              {c.type === 'AC' ? 'Corriente alterna' : 'Carga rápida · Corriente continua'}
+            </p>
+            <div class="power-number">
+              {c.power}
+              <span>kW</span>
+            </div>
+            <h3>{c.heading}</h3>
+            <p>{c.description}</p>
+            <dl>
+              <div>
+                <dt>Familia</dt>
+                <dd>{c.name}</dd>
+              </div>
+              <div>
+                <dt>Aplicación</dt>
+                <dd>{c.use}</dd>
+              </div>
+            </dl>
+            <a class="line-link" href="#contacto">
+              Conversemos sobre tu proyecto ↗
+            </a>
+          </div>
+          <div class="charger-visual">
+            <span class="product-orbit" aria-hidden="true"></span>
+            <img
+              src={asset(`media/${c.image}`)}
+              alt={`Equipo SynergEV ${c.name}, referencia de la ficha del fabricante`}
+              width="400"
+              height="550"
+              loading="lazy"
+            />
+            <span class="product-caption">SynergEV / {c.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="fine-print">
+      Potencias nominales de las alternativas evaluadas; no representan equipos instalados. La
+      potencia efectiva depende del vehículo, la batería y la instalación. La configuración final se
+      define para cada proyecto.
+    </p>
+  </div>
+</section>

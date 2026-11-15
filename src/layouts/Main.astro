@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import '@fontsource-variable/manrope';
+import { site, asset } from '../config/site';
+const canonical = new URL(import.meta.env.BASE_URL, Astro.site);
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FastCharge Argentina · La energía que te mueve</title>
+    <meta name="description" content={site.description} />
+    <meta name="theme-color" content="#171d19" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={asset('brand/favicon.svg')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content="FastCharge · La energía que te mueve" />
+    <meta property="og:description" content={site.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(asset('media/hero-1600.webp'), Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {site.commercialPreview && <meta name="robots" content="noindex,nofollow" />}
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'FastCharge',
+        description: site.description,
+        url: canonical.toString(),
+      })}
+    />
+  </head>
+  <body>
+    <a class="skip" href="#contenido">
+      Saltar al contenido
+    </a>
+    <slot />
+    <script>
+      import '../scripts/interactions';
+    </script>
+  </body>
+</html>

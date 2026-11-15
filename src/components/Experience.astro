@@ -1,0 +1,31 @@
+<section class="section wrap experience">
+  <div class="section-label">03 / UNA EXPERIENCIA SIMPLE</div>
+  <div class="section-heading">
+    <h2>
+      Una pausa.
+      <br />
+      Cuatro simples pasos.
+    </h2>
+    <a class="line-link" href="#app">
+      Probá la experiencia digital ↗
+    </a>
+  </div>
+  <div class="steps">
+    {[
+      ['01', 'Encontrá', 'Explorá la red y elegí una estación en tu camino.'],
+      ['02', 'Elegí', 'Consultá la potencia, el conector y la disponibilidad.'],
+      [
+        '03',
+        'Prepará',
+        'Reservá un turno o iniciá tu carga desde la experiencia digital propuesta.',
+      ],
+      ['04', 'Conectá', 'Seguí el estado de tu sesión y la energía entregada.'],
+    ].map(([n, title, copy]) => (
+      <article class="reveal">
+        <span>{n}</span>
+        <h3>{title}</h3>
+        <p>{copy}</p>
+      </article>
+    ))}
+  </div>
+</section>

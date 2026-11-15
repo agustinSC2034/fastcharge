@@ -1,0 +1,27 @@
+---
+import Logo from './Logo.astro';
+import { navigation, site } from '../config/site';
+---
+
+<header class="header" id="header">
+  <a href="#inicio" aria-label="FastCharge, inicio">
+    <Logo />
+  </a>
+  <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">
+    Menú <span>☰</span>
+  </button>
+  <nav id="navigation" aria-label="Principal">
+    {navigation.slice(1, -1).map(([label, id]) => (
+      <a href={`#${id}`}>{label}</a>
+    ))}
+    <a class="mobile-contact" href="#contacto">
+      Contacto
+    </a>
+  </nav>
+  <a class="button nav-contact" href="#contacto">
+    Hablemos <span>↗</span>
+  </a>
+</header>
+{site.commercialPreview && (
+  <div class="preview-strip">Previsualización comercial · Contenido para revisión</div>
+)}
