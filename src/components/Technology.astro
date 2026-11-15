@@ -1,32 +1,62 @@
 ---
 import { asset } from '../config/site';
+import Logo from './Logo.astro';
+
+const equipment = [
+  { id: 'FC-001', power: 120, status: 'Disponible', tone: 'ready' },
+  { id: 'FC-002', power: 60, status: 'En uso', tone: 'active' },
+  { id: 'FC-003', power: 120, status: 'Revisar conector', tone: 'service' },
+];
 ---
 
 <section class="section wrap technology">
   <div class="technology-layout">
-    <img
-      class="section-photo"
-      src={asset('media/tecnologia.webp')}
-      alt="Detalle de la pantalla y el indicador de estado de un cargador eléctrico"
-      width="1200"
-      height="800"
-      loading="lazy"
-      decoding="async"
-    />
+    <div class="technology-visual">
+      <img
+        class="section-photo"
+        src={asset('media/tecnologia.webp')}
+        alt="Detalle de la pantalla y el indicador de estado de un cargador eléctrico"
+        width="1200"
+        height="800"
+        loading="lazy"
+        decoding="async"
+      />
+      <figure class="operations-preview">
+        <figcaption>
+          <Logo />
+          <strong>Panel de mantenimiento</strong>
+        </figcaption>
+        <table aria-label="Vista de equipos y su estado">
+          <thead>
+            <tr>
+              <th scope="col">Equipo</th>
+              <th scope="col">Potencia</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {equipment.map(({ id, power, status, tone }) => (
+              <tr>
+                <th scope="row">{id}</th>
+                <td>{power} kW</td>
+                <td>
+                  <span class:list={['equipment-state', tone]}>{status}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </figure>
+    </div>
     <div>
       <div class="section-label">TECNOLOGÍA</div>
       <h2>
         Cargadores conectados<span class="green-dot">.</span>
       </h2>
       <p class="lead">
-        Cada equipo informa su estado a una plataforma central. Así se puede saber qué cargadores
-        están disponibles, cuáles están en uso y cuáles requieren atención.
+        El equipo de mantenimiento consulta desde un solo panel el estado de cada cargador y detecta
+        cuáles necesitan una revisión.
       </p>
-      <ul class="technology-status" aria-label="Estados del cargador">
-        <li>Disponible</li>
-        <li>En uso</li>
-        <li>Requiere atención</li>
-      </ul>
     </div>
   </div>
 </section>

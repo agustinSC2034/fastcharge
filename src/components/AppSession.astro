@@ -2,16 +2,30 @@
 import Logo from './Logo.astro';
 ---
 
-<section class="app-session section" aria-labelledby="app-session-title">
+<section id="app" class="app-session section" aria-labelledby="app-session-title">
   <div class="wrap app-session-layout">
     <div>
       <h2 id="app-session-title">
-        Seguí tu carga en tiempo real<span class="green-dot">.</span>
+        Tu próxima carga, desde tu celular<span class="green-dot">.</span>
       </h2>
-      <p class="lead">
-        Mirá cuánto avanzó la batería, cuánta energía recibió y la potencia a la que está cargando
-        tu auto.
-      </p>
+      <ol class="steps" role="list">
+        {[
+          ['Encontrá un cargador', 'Consultá la potencia, el conector y la disponibilidad.'],
+          ['Reservá tu turno', 'Elegí cuándo querés cargar.'],
+          ['Conectá y seguí la sesión', 'Consultá el progreso y la energía entregada.'],
+          ['Recibí el aviso', 'Cuando termine la carga, revisá el detalle en tu historial.'],
+        ].map(([title, detail], index) => (
+          <li>
+            <span class="step-number" aria-hidden="true">
+              {index + 1}
+            </span>
+            <div>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
     <div class="phone-area">
       <span class="phone-orbit" aria-hidden="true"></span>
