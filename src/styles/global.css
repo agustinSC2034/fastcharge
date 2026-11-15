@@ -671,6 +671,7 @@ h1 > span {
 }
 .map-frame {
   position: relative;
+  isolation: isolate;
   height: 570px;
   border-radius: 6px;
   overflow: hidden;
