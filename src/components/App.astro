@@ -24,15 +24,19 @@ import { asset } from '../config/site';
           <span>↗</span> Seguimiento e historial de carga
         </li>
       </ul>
-      <img
-        class="app-notification"
-        src={asset('media/carga-completa.webp')}
-        alt="Notificación de FastCharge: Carga completa. Tu vehículo llegó al 100 %."
-        width="960"
-        height="1200"
-        loading="lazy"
-        decoding="async"
-      />
+      <figure class="app-notification">
+        <img
+          src={asset('media/carga-completa-estacion.webp')}
+          alt="Un conductor sentado en la estación lee el aviso de FastCharge: Carga completa. Tu vehículo llegó al 100 %."
+          width="1120"
+          height="701"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          <strong>Carga completa.</strong> Tu vehículo llegó al 100 %.
+        </figcaption>
+      </figure>
     </div>
     <div class="phone-area">
       <span class="phone-orbit" aria-hidden="true"></span>

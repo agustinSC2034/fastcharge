@@ -768,14 +768,18 @@ h1 > span {
   color: #5b802a;
 }
 .app-notification {
+  margin: 0;
+}
+.app-notification img {
   display: block;
   width: 100%;
-  max-width: 500px;
   height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center 18%;
   border-radius: 18px;
+}
+.app-notification figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--ink);
 }
 .phone-area {
   position: relative;
