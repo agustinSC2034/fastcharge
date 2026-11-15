@@ -5,7 +5,6 @@ import { asset } from '../config/site';
 <section id="app" class="app-section section">
   <div class="wrap app-layout">
     <div class="app-copy">
-      <div class="section-label">APP FASTCHARGE</div>
       <h2>
         Tu próxima carga,
         <br />
@@ -30,18 +29,22 @@ import { asset } from '../config/site';
         ))}
       </ol>
     </div>
-    <figure class="app-notification">
+    <div class="app-notification">
       <img
-        src={asset('media/carga-completa-primer-plano.webp')}
-        alt="Primer plano del aviso en el celular, con el auto conectado al cargador detrás del ventanal."
+        src={asset('media/carga-completa-tarjeta.webp')}
+        alt="Un conductor mira su celular desde el café de la estación. Su auto está conectado al cargador detrás del ventanal."
         width="1440"
         height="901"
         loading="lazy"
         decoding="async"
       />
-      <figcaption>
-        <strong>Carga completa.</strong> Tu vehículo llegó al 100 %.
-      </figcaption>
-    </figure>
+      <div class="notification-card">
+        <span class="notification-app">
+          <span class="status-dot" aria-hidden="true"></span> FastCharge
+        </span>
+        <strong>Carga completa</strong>
+        <span>Tu vehículo llegó al 100 %.</span>
+      </div>
+    </div>
   </div>
 </section>

@@ -1,0 +1,64 @@
+---
+import Logo from './Logo.astro';
+---
+
+<section class="app-session section" aria-labelledby="app-session-title">
+  <div class="wrap app-session-layout">
+    <div>
+      <h2 id="app-session-title">
+        Seguí tu carga en tiempo real<span class="green-dot">.</span>
+      </h2>
+      <p class="lead">
+        Mirá cuánto avanzó la batería, cuánta energía recibió y la potencia a la que está cargando
+        tu auto.
+      </p>
+    </div>
+    <div class="phone-area">
+      <span class="phone-orbit" aria-hidden="true"></span>
+      <div class="phone">
+        <div class="phone-status" aria-hidden="true">
+          <span>9:41</span>
+          <span class="phone-camera"></span>
+          <span>▮▮▮ ▰</span>
+        </div>
+        <div class="phone-head">
+          <Logo />
+        </div>
+        <div class="phone-body">
+          <p class="phone-eyebrow">
+            <span class="status-dot"></span> CARGA EN CURSO
+          </p>
+          <h3>Tu sesión de carga</h3>
+          <p class="phone-sub">Cargador 01 · CCS2</p>
+          <div class="charge-ring">
+            <div>
+              <strong>
+                68<span>%</span>
+              </strong>
+              <small>Nivel de batería</small>
+            </div>
+          </div>
+          <div class="session-stats">
+            <div>
+              <strong>
+                18,4 <small>kWh</small>
+              </strong>
+              <span>Energía entregada</span>
+            </div>
+            <div>
+              <strong>
+                12 <small>min</small>
+              </strong>
+              <span>Tiempo de carga</span>
+            </div>
+          </div>
+          <div class="session-detail">
+            <span>Potencia actual</span>
+            <strong>84 kW</strong>
+          </div>
+        </div>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
