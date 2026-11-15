@@ -1,6 +1,6 @@
 # FastCharge
 
-Web institucional estática para una red de carga de vehículos eléctricos en Argentina, en desarrollo con inicio previsto durante 2027. Incluye home completa, catálogo interactivo, mapa, pantalla de la app y formulario de contacto.
+Web institucional estática para una red de carga de vehículos eléctricos en Argentina, en desarrollo con inicio previsto durante 2027. Incluye home completa, catálogo interactivo, mapa, recorrido de uso de la app y formulario de contacto.
 
 ## Ejecutar
 
@@ -56,7 +56,7 @@ Para habilitar recepción, definir `PUBLIC_CONTACT_ENDPOINT` antes de compilar. 
 ## Límites de esta primera versión
 
 - Red en desarrollo: no se anuncian estaciones operativas, contratos, direcciones de carga ni fechas de inauguración.
-- La pantalla de carga en la web es estática. La aplicación requiere un proyecto independiente.
+- La sección App presenta el recorrido de carga. La aplicación requiere un proyecto independiente.
 - Potencias nominales, sin promesas de tiempo de carga. Compatibilidad/configuración final y condiciones locales se validan para cada instalación.
 - Mapa con teselas OpenStreetMap y atribución; requiere conectividad. Para tráfico de producción elevado, contratar un proveedor de mapas apropiado y actualizar la URL de teselas.
 - El loop de video usa un plano continuo aéreo generado; tiene poster, pausa, mute, playsinline y carga condicionada a movimiento reducido/ahorro de datos. No se prometen métricas de campo antes de tener tráfico real.

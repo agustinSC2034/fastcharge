@@ -47,7 +47,7 @@ import { asset } from '../config/site';
               <span>kW</span>
             </div>
             <h3>≈ {estimatedChargeTime(c.power)}</h3>
-            <p>Para sumar {exampleEnergyKwh} kWh</p>
+            <p>Tiempo estimado para sumar {exampleEnergyKwh} kWh</p>
             <p class="charger-use">{c.use}</p>
           </div>
           <div class="charger-visual">
@@ -64,9 +64,5 @@ import { asset } from '../config/site';
         </div>
       ))}
     </div>
-    <p class="fine-print">
-      Tiempo estimado a potencia nominal constante. En la práctica puede ser mayor según el
-      vehículo, el nivel de batería y la temperatura.
-    </p>
   </div>
 </section>

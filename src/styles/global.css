@@ -570,13 +570,6 @@ h1 > span {
   text-transform: uppercase;
   color: var(--muted);
 }
-.chargers-section > .wrap > .fine-print {
-  border-top: 1px solid #d2d8cd;
-  padding-top: 24px;
-  margin: 36px 0 0;
-  font-size: 11px;
-}
-.experience-layout,
 .technology-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -743,29 +736,12 @@ h1 > span {
 }
 .app-layout {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
   align-items: center;
-  gap: 70px;
+  gap: clamp(30px, 5vw, 75px);
 }
 .app-copy h2 {
   font-size: clamp(38px, 4.1vw, 60px);
-}
-.app-copy > p:not(.lead):not(.fine-print) {
-  max-width: 435px;
-  font-size: 14px;
-}
-.app-features {
-  padding: 0;
-  list-style: none;
-  margin: 32px 0;
-  display: grid;
-  gap: 15px;
-  font-size: 13px;
-}
-.app-features span {
-  display: inline-block;
-  margin-right: 12px;
-  color: #5b802a;
 }
 .app-notification {
   margin: 0;
@@ -780,200 +756,6 @@ h1 > span {
   margin-top: 10px;
   font-size: 13px;
   color: var(--ink);
-}
-.phone-area {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 620px;
-  isolation: isolate;
-}
-.phone-orbit {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border: 1px solid #cbd8bc;
-  border-radius: 50%;
-  z-index: -1;
-}
-.phone-orbit:after {
-  content: '';
-  position: absolute;
-  inset: 35px;
-  background: #dfeacb;
-  border-radius: 50%;
-}
-.phone {
-  width: 326px;
-  height: 584px;
-  flex-shrink: 0;
-  border: 7px solid #252925;
-  border-radius: 43px;
-  background: #fafbf8;
-  box-shadow:
-    0 35px 50px #24331826,
-    0 0 0 2px #7d8476;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transform: rotate(3deg);
-  transition: transform 0.4s;
-}
-.phone:focus-within,
-.phone:hover {
-  transform: rotate(0);
-}
-.phone-status {
-  height: 35px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
-  font-size: 9px;
-  font-weight: 750;
-  position: relative;
-}
-.phone-camera {
-  width: 82px;
-  height: 21px;
-  border-radius: 15px;
-  background: #171b17;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 4px;
-}
-.phone-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px;
-}
-.phone-head .brand {
-  font-size: 18px;
-  letter-spacing: -0.9px;
-  gap: 4px;
-}
-.phone-head .brand svg {
-  width: 22px;
-  height: 22px;
-}
-.phone-body {
-  padding: 18px 19px;
-  flex: 1;
-}
-.phone-eyebrow {
-  font-size: 8px;
-  letter-spacing: 0.12em;
-  color: #6d805b;
-  margin-bottom: 8px;
-  font-weight: 750;
-}
-.phone-body h3 {
-  font-size: 20px;
-  letter-spacing: -0.04em;
-  margin-bottom: 7px;
-  line-height: 1.2;
-}
-.phone-sub {
-  font-size: 10px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-.home-indicator {
-  width: 90px;
-  height: 4px;
-  background: #222920;
-  border-radius: 5px;
-  margin: 5px auto 7px;
-  flex-shrink: 0;
-}
-.charge-ring {
-  border: 9px solid #dfebcf;
-  border-top-color: #7ca83c;
-  border-right-color: #7ca83c;
-  border-bottom-color: #7ca83c;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  margin: 24px auto;
-  display: grid;
-  place-items: center;
-}
-.charge-ring strong {
-  font-size: 45px;
-  display: block;
-  letter-spacing: -0.08em;
-}
-.charge-ring strong span {
-  font-size: 20px;
-}
-.charge-ring small {
-  font-size: 9px;
-  color: #748565;
-}
-.session-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  text-align: center;
-  padding: 15px 0;
-}
-.session-stats strong {
-  display: block;
-  font-size: 18px;
-}
-.session-stats small,
-.session-stats span {
-  font-size: 9px;
-  font-weight: 400;
-}
-.session-stats span {
-  color: #748565;
-}
-.session-detail {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 14px;
-  border-top: 1px solid #d4dfc8;
-  padding: 15px 0;
-  font-size: 12px;
-}
-.phone-eyebrow .status-dot {
-  margin-right: 5px;
-}
-.tech-flow {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0;
-  gap: 10px;
-  text-align: center;
-}
-.tech-flow > div {
-  flex: 1;
-}
-.tech-flow > span {
-  color: #8eb54b;
-  font-size: 38px;
-}
-.tech-flow svg {
-  width: 48px;
-  height: 48px;
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  margin-bottom: 24px;
-}
-.tech-flow h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-.tech-flow p {
-  font-size: 12px;
 }
 .contact-section {
   background: #f0f2ec;
@@ -1128,17 +910,6 @@ footer {
   }
   .section {
     padding-block: 85px;
-  }
-  .app-layout {
-    gap: 25px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .phone-area {
-    min-height: 680px;
-  }
-  .phone-orbit {
-    width: 390px;
-    height: 390px;
   }
   .network-layout {
     gap: 5%;
@@ -1401,10 +1172,6 @@ footer {
   .charger-info > p:not(.technology-type) {
     max-width: none;
   }
-  .chargers-section > .wrap > .fine-print {
-    font-size: 10px;
-    margin-top: 30px;
-  }
   .network-layout {
     grid-template-columns: 1fr;
     gap: 35px;
@@ -1436,54 +1203,14 @@ footer {
   }
   .app-layout {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 28px;
   }
   .app-copy h2 {
     font-size: 40px;
   }
-  .app-copy .lead {
-    font-size: 21px;
-  }
-  .phone-area {
-    min-height: 604px;
-    overflow: visible;
-    margin-top: 20px;
-  }
-  .phone {
-    transform: none;
-    max-width: 100%;
-  }
-  .phone-orbit {
-    width: 340px;
-    height: 340px;
-  }
-  .app-copy > p:not(.lead):not(.fine-print) {
-    max-width: none;
-  }
-  .experience-layout,
   .technology-layout {
     grid-template-columns: 1fr;
     gap: 28px;
-  }
-  .tech-flow {
-    padding-top: 0;
-    gap: 8px;
-  }
-  .tech-flow svg {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 20px;
-  }
-  .tech-flow h3 {
-    font-size: 17px;
-    letter-spacing: -0.04em;
-  }
-  .tech-flow p {
-    font-size: 10px;
-    line-height: 1.5;
-  }
-  .tech-flow > span {
-    font-size: 20px;
   }
   .contact-layout {
     grid-template-columns: 1fr;
@@ -1566,21 +1293,6 @@ footer {
   .hero {
     min-height: 625px;
   }
-  .phone {
-    width: 310px;
-    height: 570px;
-    border-width: 6px;
-  }
-  .phone-area {
-    margin-inline: -10px;
-  }
-  .phone-body {
-    padding-inline: 17px;
-  }
-  .phone-orbit {
-    width: 300px;
-    height: 300px;
-  }
   .hero-kicker {
     font-size: 8px;
   }
@@ -1600,9 +1312,6 @@ footer {
   }
   .reveal.pending {
     opacity: 1;
-    transform: none;
-  }
-  .phone {
     transform: none;
   }
   .hero video {

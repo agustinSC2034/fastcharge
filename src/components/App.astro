@@ -1,5 +1,4 @@
 ---
-import Logo from './Logo.astro';
 import { asset } from '../config/site';
 ---
 
@@ -12,78 +11,37 @@ import { asset } from '../config/site';
         <br />
         desde tu celular<span class="green-dot">.</span>
       </h2>
-      <p class="lead">Encontrá un cargador, reservá tu turno y seguí tu carga desde el celular.</p>
-      <ul class="app-features">
-        <li>
-          <span>↗</span> Mapa, potencia y disponibilidad
-        </li>
-        <li>
-          <span>↗</span> Reserva de turnos
-        </li>
-        <li>
-          <span>↗</span> Seguimiento e historial de carga
-        </li>
-      </ul>
-      <figure class="app-notification">
-        <img
-          src={asset('media/carga-completa-estacion.webp')}
-          alt="Un conductor sentado en la estación lee el aviso de FastCharge: Carga completa. Tu vehículo llegó al 100 %."
-          width="1120"
-          height="701"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption>
-          <strong>Carga completa.</strong> Tu vehículo llegó al 100 %.
-        </figcaption>
-      </figure>
+      <ol class="steps" role="list">
+        {[
+          ['Encontrá un cargador', 'Consultá la potencia, el conector y la disponibilidad.'],
+          ['Reservá tu turno', 'Elegí cuándo querés cargar.'],
+          ['Conectá y seguí la sesión', 'Consultá el progreso y la energía entregada.'],
+          ['Recibí el aviso', 'Cuando termine la carga, revisá el detalle en tu historial.'],
+        ].map(([title, detail], index) => (
+          <li>
+            <span class="step-number" aria-hidden="true">
+              {index + 1}
+            </span>
+            <div>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
-    <div class="phone-area">
-      <span class="phone-orbit" aria-hidden="true"></span>
-      <div class="phone">
-        <div class="phone-status" aria-hidden="true">
-          <span>9:41</span>
-          <span class="phone-camera"></span>
-          <span>▮▮▮ ▰</span>
-        </div>
-        <div class="phone-head">
-          <Logo />
-        </div>
-        <div class="phone-body">
-          <p class="phone-eyebrow">
-            <span class="status-dot"></span> CARGA EN CURSO
-          </p>
-          <h3>Tu sesión de carga</h3>
-          <p class="phone-sub">Cargador 01 · CCS2</p>
-          <div class="charge-ring">
-            <div>
-              <strong>
-                68<span>%</span>
-              </strong>
-              <small>Nivel de batería</small>
-            </div>
-          </div>
-          <div class="session-stats">
-            <div>
-              <strong>
-                18,4 <small>kWh</small>
-              </strong>
-              <span>Energía entregada</span>
-            </div>
-            <div>
-              <strong>
-                12 <small>min</small>
-              </strong>
-              <span>Tiempo de carga</span>
-            </div>
-          </div>
-          <div class="session-detail">
-            <span>Potencia actual</span>
-            <strong>84 kW</strong>
-          </div>
-        </div>
-        <div class="home-indicator" aria-hidden="true"></div>
-      </div>
-    </div>
+    <figure class="app-notification">
+      <img
+        src={asset('media/carga-completa-primer-plano.webp')}
+        alt="Primer plano del aviso en el celular, con el auto conectado al cargador detrás del ventanal."
+        width="1440"
+        height="901"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        <strong>Carga completa.</strong> Tu vehículo llegó al 100 %.
+      </figcaption>
+    </figure>
   </div>
 </section>

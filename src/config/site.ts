@@ -14,7 +14,7 @@ export const navigation = [
   ['Inicio', 'inicio'],
   ['Quiénes somos', 'fastcharge'],
   ['Soluciones', 'soluciones'],
-  ['Ubicaciones', 'ubicaciones'],
   ['App', 'app'],
+  ['Ubicaciones', 'ubicaciones'],
   ['Contacto', 'contacto'],
 ];
