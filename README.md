@@ -49,7 +49,7 @@ El comando de build público retira los dos logos temporales de `public/commerci
 
 ## Contacto
 
-Sin receptor configurado, el formulario valida y descarga `consulta-fastcharge.txt` localmente. No envía ni almacena datos. No se inventaron emails ni teléfonos.
+El botón «Enviar mi consulta» se habilita al configurar un receptor.
 
 Para habilitar recepción, definir `PUBLIC_CONTACT_ENDPOINT` antes de compilar. Contrato: POST JSON con `name`, `company`, `email`, `reason`, `message`, `website` (honeypot) y `elapsedMs`. El servidor debe responder JSON `{ "accepted": true }` SOLO después de aceptar la consulta. Incluye control de respuesta HTTP, timeout y bloqueo de doble envío. El receptor debe validar campos, limitar solicitudes, verificar origen y antispam en servidor; las medidas del navegador no reemplazan esa protección. No poner secretos en variables PUBLIC_.
 

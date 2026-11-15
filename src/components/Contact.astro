@@ -80,14 +80,14 @@ import { site } from '../config/site';
       <p class="form-note">
         {site.contactEndpoint
           ? 'Usaremos tus datos únicamente para responder tu consulta.'
-          : 'Mientras habilitamos el canal de recepción, podés descargar tu consulta para compartirla con tu contacto de FastCharge. Los datos permanecen en tu dispositivo.'}
+          : 'El envío de consultas todavía no está habilitado.'}
       </p>
-      <button type="submit" class="button dark full">
-        {site.contactEndpoint ? 'Enviar consulta' : 'Descargar mi consulta'} <span>↗</span>
+      <button type="submit" class="button dark full" disabled={!site.contactEndpoint}>
+        Enviar mi consulta <span>↗</span>
       </button>
       <p id="form-status" role="status" aria-live="polite"></p>
       <noscript>
-        <p>Activá JavaScript para preparar la consulta. No hay envío automático.</p>
+        <p>Activá JavaScript para enviar tu consulta.</p>
       </noscript>
     </form>
   </div>

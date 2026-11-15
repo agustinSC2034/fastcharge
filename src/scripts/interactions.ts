@@ -39,25 +39,14 @@ if (!reduced.matches) {
     reveals.observe(el);
   });
 }
-const video = $<HTMLVideoElement>('#hero-video'),
-  videoButton = $<HTMLButtonElement>('#video-toggle');
+const video = $<HTMLVideoElement>('#hero-video');
 const connection = (
   navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }
 ).connection;
-let userPaused = false;
-function updateVideoButton() {
-  videoButton.textContent = video.paused ? '▷ Reproducir' : 'Ⅱ Pausar';
-  videoButton.setAttribute(
-    'aria-label',
-    video.paused ? 'Reproducir video de fondo' : 'Pausar video de fondo',
-  );
-}
 async function playVideo() {
   try {
     await video.play();
     video.classList.add('ready');
-    videoButton.hidden = false;
-    updateVideoButton();
   } catch {
     video.classList.remove('ready');
   }
@@ -76,40 +65,25 @@ if (
   else window.addEventListener('load', start, { once: true });
   video.addEventListener('error', () => {
     video.classList.remove('ready');
-    videoButton.hidden = true;
   });
   new IntersectionObserver(
     (entries) => {
       if (!video.src) return;
-      if (entries[0].isIntersecting && !userPaused && !reduced.matches) void playVideo();
+      if (entries[0].isIntersecting && !reduced.matches) void playVideo();
       else video.pause();
     },
     { threshold: 0.1 },
   ).observe(video);
 }
-videoButton.addEventListener('click', () => {
-  userPaused = !video.paused;
-  if (video.paused) void playVideo();
-  else {
-    video.pause();
-    updateVideoButton();
-  }
-});
 reduced.addEventListener('change', () => {
   if (reduced.matches) {
     video.pause();
     video.classList.remove('ready');
-    videoButton.hidden = true;
   }
 });
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) video.pause();
-  else if (
-    !userPaused &&
-    !reduced.matches &&
-    video.src &&
-    $('#inicio').getBoundingClientRect().bottom > 0
-  )
+  else if (!reduced.matches && video.src && $('#inicio').getBoundingClientRect().bottom > 0)
     void playVideo();
 });
 const tabs = $$<HTMLButtonElement>('[data-charger]');
@@ -229,11 +203,6 @@ $('#demo-confirm').addEventListener('click', () => {
 $('#demo-history').addEventListener('click', () => showDemo('history'));
 $('#nav-history').addEventListener('click', () => showDemo('history'));
 $$('[data-demo-back]').forEach((b) => b.addEventListener('click', () => showDemo('map')));
-$('#try-demo').addEventListener('click', () => {
-  showDemo('map');
-  $('#phone').scrollIntoView({ behavior: reduced.matches ? 'auto' : 'smooth', block: 'center' });
-  $('#demo-reserve').focus({ preventScroll: true });
-});
 const form = $<HTMLFormElement>('#contact-form');
 let submitting = false;
 const loadedAt = Date.now();
@@ -262,22 +231,7 @@ form.addEventListener('submit', async (e) => {
     return;
   }
   const endpoint = form.dataset.endpoint;
-  if (!endpoint) {
-    const content =
-      `Consulta FastCharge\\n\\nNombre: ${payload.name}\\nEmpresa: ${payload.company}\\nEmail: ${payload.email}\\nMotivo: ${payload.reason}\\n\\n${payload.message}\\n\\nConsulta preparada localmente. No enviada.\\n`.replaceAll(
-        '\\n',
-        '\n',
-      );
-    const url = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'consulta-fastcharge.txt';
-    link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    status.textContent =
-      'Consulta descargada. No se envió ningún mensaje; compartí el archivo con tu contacto de FastCharge.';
-    return;
-  }
+  if (!endpoint) return;
   submitting = true;
   const submit = $<HTMLButtonElement>('#contact-form button[type=submit]');
   submit.disabled = true;

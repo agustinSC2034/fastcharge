@@ -25,6 +25,7 @@ jobs:
           SITE_URL: https://agustinsc2034.github.io
           BASE_PATH: /fastcharge
           PUBLIC_COMMERCIAL_PREVIEW: 'false'
+          PUBLIC_CONTACT_ENDPOINT: ${{ vars.PUBLIC_CONTACT_ENDPOINT }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

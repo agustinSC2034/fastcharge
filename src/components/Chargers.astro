@@ -1,5 +1,5 @@
 ---
-import { chargers } from '../data/chargers';
+import { chargers, estimatedChargeTime, exampleEnergyKwh } from '../data/chargers';
 import { asset } from '../config/site';
 ---
 
@@ -12,11 +12,6 @@ import { asset } from '../config/site';
         <br />
         para cada parada<span class="green-dot">.</span>
       </h2>
-      <p>
-        De la rutina al próximo viaje.
-        <br />
-        Explorá las alternativas de nuestra propuesta.
-      </p>
     </div>
     <div class="charger-tabs" role="tablist" aria-label="Potencia del cargador">
       {chargers.map((c, i) => (
@@ -28,7 +23,7 @@ import { asset } from '../config/site';
           tabindex={i === 5 ? 0 : -1}
           data-charger={i}
         >
-          {c.power} <span>kW</span>
+          {c.power.toLocaleString('es-AR')} <span>kW</span>
         </button>
       ))}
     </div>
@@ -48,24 +43,12 @@ import { asset } from '../config/site';
               {c.type === 'AC' ? 'Corriente alterna' : 'Carga rápida · Corriente continua'}
             </p>
             <div class="power-number">
-              {c.power}
+              {c.power.toLocaleString('es-AR')}
               <span>kW</span>
             </div>
-            <h3>{c.heading}</h3>
-            <p>{c.description}</p>
-            <dl>
-              <div>
-                <dt>Familia</dt>
-                <dd>{c.name}</dd>
-              </div>
-              <div>
-                <dt>Aplicación</dt>
-                <dd>{c.use}</dd>
-              </div>
-            </dl>
-            <a class="line-link" href="#contacto">
-              Conversemos sobre tu proyecto ↗
-            </a>
+            <h3>≈ {estimatedChargeTime(c.power)}</h3>
+            <p>Para sumar {exampleEnergyKwh} kWh</p>
+            <p class="charger-use">{c.use}</p>
           </div>
           <div class="charger-visual">
             <span class="product-orbit" aria-hidden="true"></span>
@@ -82,9 +65,8 @@ import { asset } from '../config/site';
       ))}
     </div>
     <p class="fine-print">
-      Potencias nominales de las alternativas evaluadas; no representan equipos instalados. La
-      potencia efectiva depende del vehículo, la batería y la instalación. La configuración final se
-      define para cada proyecto.
+      Tiempo estimado a potencia nominal constante. En la práctica puede ser mayor según el
+      vehículo, el nivel de batería y la temperatura.
     </p>
   </div>
 </section>
