@@ -12,7 +12,7 @@ export const asset = (path: string) =>
   `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 export const navigation = [
   ['Inicio', 'inicio'],
-  ['FastCharge', 'fastcharge'],
+  ['Quiénes somos', 'fastcharge'],
   ['Soluciones', 'soluciones'],
   ['Ubicaciones', 'ubicaciones'],
   ['App', 'app'],

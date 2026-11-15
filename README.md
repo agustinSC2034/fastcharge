@@ -1,6 +1,6 @@
 # FastCharge
 
-Web institucional estática para una red de carga de vehículos eléctricos en Argentina, en desarrollo con inicio previsto durante 2027. Incluye home completa, catálogo interactivo, mapa, prototipo local de app y contacto sin envíos simulados.
+Web institucional estática para una red de carga de vehículos eléctricos en Argentina, en desarrollo con inicio previsto durante 2027. Incluye home completa, catálogo interactivo, mapa, pantalla de la app y formulario de contacto.
 
 ## Ejecutar
 
@@ -19,10 +19,10 @@ Abrir http://127.0.0.1:4321. Producción: `npm run build` genera `dist/`; `npm r
 | ----------------------------- | -------------------------------------------------------------------- |
 | `src/config/site.ts`          | Marca, dirección corporativa, navegación y publicación               |
 | `src/data/chargers.ts`        | Potencias, familia, imagen y descripción                             |
-| `src/data/locations.ts`       | Estaciones verificadas (lista inicialmente vacía), categorías y demo |
+| `src/data/locations.ts`       | Estaciones verificadas y categorías |
 | `src/data/partners.ts`        | Marcas de la previsualización comercial                              |
 | `src/components/`             | Secciones separadas y componentes visuales                           |
-| `src/scripts/interactions.ts` | Catálogo, navegación, mapa, demo y contacto                          |
+| `src/scripts/interactions.ts` | Catálogo, navegación, mapa y contacto                          |
 | `src/styles/global.css`       | Tokens, layouts, responsive y movimiento reducido                    |
 | `public/brand/`               | Favicon y versiones reemplazables del logo provisional               |
 | `public/media/`               | Fotografías, referencias de producto y video optimizados             |
@@ -56,7 +56,7 @@ Para habilitar recepción, definir `PUBLIC_CONTACT_ENDPOINT` antes de compilar. 
 ## Límites de esta primera versión
 
 - Red en desarrollo: no se anuncian estaciones operativas, contratos, direcciones de carga ni fechas de inauguración.
-- App de demostración sin backend, pagos, cuentas, OCPP ni reservas reales. Estados e historial son ejemplos.
+- La pantalla de carga en la web es estática. La aplicación requiere un proyecto independiente.
 - Potencias nominales, sin promesas de tiempo de carga. Compatibilidad/configuración final y condiciones locales se validan para cada instalación.
 - Mapa con teselas OpenStreetMap y atribución; requiere conectividad. Para tráfico de producción elevado, contratar un proveedor de mapas apropiado y actualizar la URL de teselas.
 - El loop de video usa un plano continuo aéreo generado; tiene poster, pausa, mute, playsinline y carga condicionada a movimiento reducido/ahorro de datos. No se prometen métricas de campo antes de tener tráfico real.

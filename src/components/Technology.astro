@@ -1,5 +1,9 @@
+---
+import { asset } from '../config/site';
+---
+
 <section class="section wrap technology">
-  <div class="section-label">06 / TECNOLOGÍA QUE CONECTA</div>
+  <div class="section-label">TECNOLOGÍA QUE CONECTA</div>
   <div class="section-heading">
     <h2>
       Una red inteligente.
@@ -11,30 +15,41 @@
       pueda crecer.
     </p>
   </div>
-  <div class="tech-flow">
-    <div>
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M12 42V6h22v36M8 42h30M17 12h12v10H17zm17 1 8 7v17q0 6-5 3l-3-8" />
-      </svg>
-      <h3>Cargador</h3>
-      <p>La energía en cada punto.</p>
-    </div>
-    <span aria-hidden="true">⟶</span>
-    <div>
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <path d="M6 8h36v25H6zM2 40h44M20 33v7m8-7v7M12 26l7-8 7 4 9-9" />
-      </svg>
-      <h3>Plataforma</h3>
-      <p>Gestión y monitoreo de la red.</p>
-    </div>
-    <span aria-hidden="true">⟶</span>
-    <div>
-      <svg viewBox="0 0 48 48" aria-hidden="true">
-        <rect x="13" y="3" width="24" height="42" rx="4" />
-        <path d="M20 8h10M21 39h8M19 24l4 4 8-9" />
-      </svg>
-      <h3>Aplicación</h3>
-      <p>Tu carga, bajo control.</p>
+  <div class="technology-layout">
+    <img
+      class="section-photo"
+      src={asset('media/tecnologia.webp')}
+      alt="Detalle de la pantalla y el indicador de estado de un cargador eléctrico"
+      width="1200"
+      height="800"
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="tech-flow">
+      <div>
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M12 42V6h22v36M8 42h30M17 12h12v10H17zm17 1 8 7v17q0 6-5 3l-3-8" />
+        </svg>
+        <h3>Cargador</h3>
+        <p>La energía en cada punto.</p>
+      </div>
+      <span aria-hidden="true">⟶</span>
+      <div>
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M6 8h36v25H6zM2 40h44M20 33v7m8-7v7M12 26l7-8 7 4 9-9" />
+        </svg>
+        <h3>Plataforma</h3>
+        <p>Gestión y monitoreo de la red.</p>
+      </div>
+      <span aria-hidden="true">⟶</span>
+      <div>
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="13" y="3" width="24" height="42" rx="4" />
+          <path d="M20 8h10M21 39h8M19 24l4 4 8-9" />
+        </svg>
+        <h3>Aplicación</h3>
+        <p>Tu carga, bajo control.</p>
+      </div>
     </div>
   </div>
 </section>

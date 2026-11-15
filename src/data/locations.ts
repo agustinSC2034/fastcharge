@@ -13,7 +13,7 @@ export const categories = [
   {
     id: 'all',
     label: 'Toda la red',
-    copy: 'Estamos desarrollando una red para conectar tus recorridos. Las ubicaciones se publicarán a medida que sean confirmadas.',
+    copy: 'Explorá los tipos de lugares donde planeamos instalar cargadores.',
   },
   {
     id: 'food',
@@ -29,21 +29,5 @@ export const categories = [
     id: 'parking',
     label: 'Estacionamientos',
     copy: 'Sumar energía mientras hacés tus compras o continuás con tus actividades.',
-  },
-];
-export const demoChargers = [
-  {
-    id: 'demo-01',
-    name: 'Estación de demostración',
-    power: 120,
-    connector: 'CCS2',
-    available: true,
-  },
-  {
-    id: 'demo-02',
-    name: 'Estación de demostración',
-    power: 60,
-    connector: 'CCS2',
-    available: false,
   },
 ];

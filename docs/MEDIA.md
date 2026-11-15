@@ -25,3 +25,11 @@ Photorealistic premium electric car charging photograph, wide landscape 16:9, cl
 7,6 kW: J100 HS102-A32. 11,5 kW: J200 CS308-A48. 40 kW: J-DC Dual Wallbox L3D-DC40. 60/120/240 kW: familia J-DC de piso. Imagen común de familia para las tres configuraciones DC; no se afirma que sus potencias se sumen por puerto.
 
 Se omitieron especificaciones contradictorias de pantalla, garantías, frecuencia AC, tensión de entrada y variantes de conectores. Se requiere confirmación del proveedor para configuración local; no se anuncia homologación argentina. J-Ultra se identificó como AC, no se confundió su pantalla con alta potencia DC.
+
+
+## Fotografías de experiencia y tecnología
+
+Escenas generadas con ImageGen para la web, sin marcas ni instalaciones reales identificadas.
+
+- `public/media/conectar.webp`: Photoreal editorial automotive photograph, vertical 4:5 composition for a contemporary Argentine EV charging website. Medium close-up, one adult wearing a sage overshirt beside the rear quarter of a silver electric crossover, hand inserting a black CCS charging handle into the vehicle's open charging port. Show the handle accurately seated, a single thick cable naturally leading downward and toward a compact dark charger subtly visible on the right. Modern simple roadside charging stop in central Argentina, cloudy daylight, native grasses, muted olive tones, realistic clean lighting, tactile car paint and materials. Distinct silhouette, clear action, camera at waist height. No readable text, no logo, no vendor brands, no signs, no graphics, no glow.
+- `public/media/tecnologia.webp`: Photoreal cinematic editorial photograph for an Argentine electric mobility website technology section, landscape 3:2. Close three-quarter detail of the upper part of a contemporary matte graphite EV charging pedestal in a modern sheltered charging bay, small glass screen with understated neutral interface glow and single clear vertical lime-green status light. Charger on left of center, black tethered cable visible at its side; behind it soft focus silver electric car and concrete canopy, Argentine low grasses, natural evening daylight, olive green and warm graphite tones. Strong diagonal recession, well-lit hardware texture, plausible product design, modern independent automotive magazine. No legible text, no logos, no overlay graphics, no people.

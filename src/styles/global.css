@@ -243,7 +243,7 @@ p {
   gap: 32px;
 }
 .header nav a {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 650;
   position: relative;
   padding: 15px 0;
@@ -277,7 +277,7 @@ p {
   font-size: 12px;
 }
 .hero {
-  min-height: 690px;
+  min-height: 620px;
   height: calc(100svh - 88px);
   max-height: 1000px;
   position: relative;
@@ -444,6 +444,13 @@ h1 > span {
 }
 .chargers-section {
   background: #f0f2ed;
+  padding-block: clamp(48px, 6vw, 84px);
+}
+.chargers-section .section-heading h2 {
+  font-size: clamp(34px, 4vw, 56px);
+}
+.chargers-section .section-label {
+  margin-bottom: 20px;
 }
 .charger-tabs {
   display: flex;
@@ -481,7 +488,7 @@ h1 > span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 500px;
+  min-height: 390px;
   gap: 8%;
   padding-top: 34px;
   animation: panel-in 0.4s var(--ease);
@@ -500,7 +507,7 @@ h1 > span {
   border-radius: 50%;
 }
 .power-number {
-  font-size: clamp(90px, 10vw, 150px);
+  font-size: clamp(72px, 8vw, 116px);
   font-weight: 650;
   line-height: 1.2;
   letter-spacing: -0.08em;
@@ -526,12 +533,12 @@ h1 > span {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 480px;
+  min-height: 360px;
   isolation: isolate;
   flex-direction: column;
 }
 .charger-visual img {
-  height: 400px;
+  height: 305px;
   width: auto;
   max-width: 90%;
   object-fit: contain;
@@ -540,13 +547,13 @@ h1 > span {
   filter: drop-shadow(12px 22px 17px #15251b16);
 }
 .product-orbit {
-  width: 360px;
-  height: 360px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   border: 1px solid #d0d7c8;
   position: absolute;
   background: #e8edde;
-  top: 70px;
+  top: 46px;
   z-index: -1;
 }
 .product-orbit:after {
@@ -569,44 +576,52 @@ h1 > span {
   margin: 36px 0 0;
   font-size: 11px;
 }
-.experience .section-heading {
+.experience-layout,
+.technology-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 92px);
   align-items: center;
 }
+.section-photo {
+  width: 100%;
+  display: block;
+  height: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: 20px;
+}
 .steps {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+  border-top: 1px solid var(--line);
+}
+.steps li {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 60px;
+  grid-template-columns: 38px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
 }
-.steps article {
-  position: relative;
-}
-.steps article:before {
-  content: '';
-  height: 1px;
-  background: var(--line);
-  position: absolute;
-  top: 23px;
-  left: 60px;
-  right: 0;
-}
-.steps article > span {
-  height: 46px;
-  width: 46px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
+.step-number {
   display: grid;
   place-items: center;
-  font-size: 12px;
-  margin-bottom: 25px;
+  width: 36px;
+  height: 36px;
+  background: #e9f0de;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
 }
 .steps h3 {
-  font-size: 25px;
-  margin-bottom: 14px;
+  font-size: 18px;
+  margin: 0 0 3px;
 }
 .steps p {
-  font-size: 13px;
-  max-width: 240px;
+  font-size: 14px;
+  margin: 0;
 }
 .network {
   background: var(--ink);
@@ -656,24 +671,6 @@ h1 > span {
 #network-description {
   min-height: 70px;
   max-width: 420px;
-}
-.launch {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  border-top: 1px solid #4a5747;
-  padding-top: 25px;
-  margin-top: 30px;
-}
-.launch > span {
-  font-size: 58px;
-  letter-spacing: -0.06em;
-  color: var(--lime);
-}
-.launch > div {
-  font-size: 13px;
-  line-height: 1.6;
-  color: #ced8c7;
 }
 .network-copy .network-status {
   font-size: 10px !important;
@@ -770,17 +767,12 @@ h1 > span {
   margin-right: 12px;
   color: #5b802a;
 }
-.app-copy .fine-print {
-  max-width: 380px;
-  margin-top: 18px;
-  font-size: 11px;
-}
 .phone-area {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 690px;
+  min-height: 620px;
   isolation: isolate;
 }
 .phone-orbit {
@@ -800,7 +792,7 @@ h1 > span {
 }
 .phone {
   width: 326px;
-  height: 654px;
+  height: 584px;
   flex-shrink: 0;
   border: 7px solid #252925;
   border-radius: 43px;
@@ -854,50 +846,6 @@ h1 > span {
   width: 22px;
   height: 22px;
 }
-.demo-badge {
-  font-size: 8px;
-  letter-spacing: 0.1em;
-  border: 1px solid #cbd5be;
-  padding: 4px 6px;
-  border-radius: 4px;
-  color: #5f6f51;
-}
-.mini-map {
-  height: 175px;
-  position: relative;
-  overflow: hidden;
-}
-.mini-map svg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.demo-pin {
-  position: absolute;
-  top: 43%;
-  left: 48%;
-  width: 34px;
-  height: 34px;
-  background: var(--ink);
-  color: var(--lime);
-  border: 3px solid #fff;
-  border-radius: 50% 50% 50% 3px;
-  display: grid;
-  place-items: center;
-  transform: rotate(-20deg);
-  font-weight: 850;
-  box-shadow: 0 4px 10px #0003;
-}
-.map-demo-label {
-  position: absolute;
-  right: 8px;
-  bottom: 7px;
-  font-size: 8px;
-  color: #667158;
-  background: #ffffffe0;
-  padding: 3px 6px;
-  border-radius: 3px;
-}
 .phone-body {
   padding: 18px 19px;
   flex: 1;
@@ -920,83 +868,6 @@ h1 > span {
   line-height: 1.5;
   margin-bottom: 12px;
 }
-.demo-charger {
-  width: 100%;
-  padding: 11px 10px;
-  border: 1px solid #dde3d6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-radius: 9px;
-  margin-bottom: 8px;
-  text-align: left;
-  min-height: 56px;
-}
-.demo-charger.selected {
-  border-color: #93b65e;
-  background: #f4f9ed;
-}
-.demo-charger b {
-  font-size: 10px;
-  display: block;
-}
-.demo-charger small {
-  display: block;
-  font-size: 9px;
-  color: #79866d;
-  margin-top: 5px;
-}
-.available {
-  color: #4c792c;
-  font-size: 9px;
-}
-.busy {
-  font-size: 9px;
-  color: #8d7351;
-}
-.phone .button {
-  font-size: 11px;
-  padding: 10px 16px;
-  min-height: 40px;
-  gap: 5px;
-  border-radius: 9px;
-  margin-top: 3px;
-}
-.phone-note {
-  font-size: 9px;
-  text-align: center;
-  line-height: 1.5;
-  margin: 10px 0 0;
-  color: #78846f;
-}
-.phone-footer {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding: 8px 20px;
-  border-top: 1px solid #e2e7db;
-  margin-top: auto;
-  background: var(--paper);
-  height: 53px;
-}
-.phone-footer button {
-  border: 0;
-  background: none;
-  padding: 0;
-  font-size: 18px;
-  color: #596c44;
-  min-width: 36px;
-}
-.phone-footer button span {
-  display: block;
-  font-size: 8px;
-}
-.phone-footer-label {
-  font-size: 8px;
-  margin-left: auto;
-  color: #7a8670;
-}
 .home-indicator {
   width: 90px;
   height: 4px;
@@ -1004,62 +875,6 @@ h1 > span {
   border-radius: 5px;
   margin: 5px auto 7px;
   flex-shrink: 0;
-}
-.floating-label {
-  position: absolute;
-  bottom: 18px;
-  right: -5px;
-  padding: 15px 20px;
-  background: var(--ink);
-  color: white;
-  font-size: 11px;
-  border-radius: 99px;
-  box-shadow: 0 5px 20px #24331824;
-}
-.floating-label span {
-  margin-right: 8px;
-}
-.phone-back {
-  border: 0;
-  background: none;
-  padding: 6px 0;
-  margin-bottom: 30px;
-  font-size: 10px;
-  color: #5d7150;
-}
-.demo-field {
-  display: block;
-  margin: 24px 0;
-  font-size: 11px;
-}
-.demo-field select {
-  display: block;
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #c6d2b7;
-  border-radius: 8px;
-  padding: 12px;
-  background: white;
-  font-size: 13px;
-}
-.demo-summary {
-  display: grid;
-  gap: 12px;
-  padding: 20px;
-  border: 1px solid #d4dfc8;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-.demo-summary > span {
-  font-size: 10px;
-}
-.demo-summary > strong {
-  font-size: 24px;
-}
-.demo-summary > small {
-  font-size: 10px;
-  color: #6a785d;
-  line-height: 1.6;
 }
 .charge-ring {
   border: 9px solid #dfebcf;
@@ -1103,30 +918,23 @@ h1 > span {
 .session-stats span {
   color: #748565;
 }
-.history-entry {
-  display: grid;
-  gap: 10px;
-  margin: 30px 0;
-  padding: 22px;
-  border: 1px solid #cfdac3;
-  border-radius: 8px;
-}
-.history-entry span {
+.session-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  border-top: 1px solid #d4dfc8;
+  padding: 15px 0;
   font-size: 12px;
 }
-.history-entry strong {
-  font-size: 28px;
-}
-.history-entry small {
-  font-size: 10px;
-  line-height: 1.5;
-  color: #75816a;
+.phone-eyebrow .status-dot {
+  margin-right: 5px;
 }
 .tech-flow {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 55px 0 10px;
+  padding: 0;
+  gap: 10px;
   text-align: center;
 }
 .tech-flow > div {
@@ -1583,20 +1391,6 @@ footer {
     font-size: 10px;
     margin-top: 30px;
   }
-  .steps {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 25px;
-    margin-top: 35px;
-  }
-  .steps h3 {
-    font-size: 23px;
-  }
-  .steps p {
-    font-size: 12px;
-  }
-  .experience .line-link {
-    margin-top: 25px;
-  }
   .network-layout {
     grid-template-columns: 1fr;
     gap: 35px;
@@ -1613,9 +1407,6 @@ footer {
   .network-filters button {
     font-size: 10px;
     padding: 10px 12px;
-  }
-  .launch > span {
-    font-size: 52px;
   }
   .map-frame {
     height: 440px;
@@ -1640,7 +1431,7 @@ footer {
     font-size: 21px;
   }
   .phone-area {
-    min-height: 705px;
+    min-height: 604px;
     overflow: visible;
     margin-top: 20px;
   }
@@ -1652,18 +1443,16 @@ footer {
     width: 340px;
     height: 340px;
   }
-  .floating-label {
-    right: 0;
-    bottom: 3px;
-  }
   .app-copy > p:not(.lead):not(.fine-print) {
     max-width: none;
   }
-  .app-copy .fine-print {
-    max-width: none;
+  .experience-layout,
+  .technology-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
   .tech-flow {
-    padding-top: 30px;
+    padding-top: 0;
     gap: 8px;
   }
   .tech-flow svg {
@@ -1765,7 +1554,7 @@ footer {
   }
   .phone {
     width: 310px;
-    height: 650px;
+    height: 570px;
     border-width: 6px;
   }
   .phone-area {
@@ -1824,17 +1613,6 @@ footer {
 @media (max-width: 760px) {
   .mobile-contact {
     display: block;
-  }
-  .phone .button {
-    min-height: 44px;
-  }
-  .demo-charger b {
-    font-size: 11px;
-  }
-  .demo-charger small,
-  .available,
-  .busy {
-    font-size: 10px;
   }
 }
 

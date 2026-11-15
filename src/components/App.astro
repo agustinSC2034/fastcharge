@@ -1,0 +1,75 @@
+---
+import Logo from './Logo.astro';
+---
+
+<section id="app" class="app-section section">
+  <div class="wrap app-layout">
+    <div class="app-copy">
+      <div class="section-label">APP FASTCHARGE</div>
+      <h2>
+        Tu próxima carga,
+        <br />
+        desde tu celular<span class="green-dot">.</span>
+      </h2>
+      <p class="lead">Encontrá un cargador, reservá tu turno y seguí tu carga desde el celular.</p>
+      <ul class="app-features">
+        <li>
+          <span>↗</span> Mapa, potencia y disponibilidad
+        </li>
+        <li>
+          <span>↗</span> Reserva de turnos
+        </li>
+        <li>
+          <span>↗</span> Seguimiento e historial de carga
+        </li>
+      </ul>
+    </div>
+    <div class="phone-area">
+      <span class="phone-orbit" aria-hidden="true"></span>
+      <div class="phone">
+        <div class="phone-status" aria-hidden="true">
+          <span>9:41</span>
+          <span class="phone-camera"></span>
+          <span>▮▮▮ ▰</span>
+        </div>
+        <div class="phone-head">
+          <Logo />
+        </div>
+        <div class="phone-body">
+          <p class="phone-eyebrow">
+            <span class="status-dot"></span> CARGA EN CURSO
+          </p>
+          <h3>Tu sesión de carga</h3>
+          <p class="phone-sub">Cargador 01 · CCS2</p>
+          <div class="charge-ring">
+            <div>
+              <strong>
+                68<span>%</span>
+              </strong>
+              <small>Nivel de batería</small>
+            </div>
+          </div>
+          <div class="session-stats">
+            <div>
+              <strong>
+                18,4 <small>kWh</small>
+              </strong>
+              <span>Energía entregada</span>
+            </div>
+            <div>
+              <strong>
+                12 <small>min</small>
+              </strong>
+              <span>Tiempo de carga</span>
+            </div>
+          </div>
+          <div class="session-detail">
+            <span>Potencia actual</span>
+            <strong>84 kW</strong>
+          </div>
+        </div>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>

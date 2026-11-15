@@ -1,31 +1,42 @@
+---
+import { asset } from '../config/site';
+
+const steps = [
+  ['Encontrá una estación', 'Buscá un punto de carga en tu recorrido.'],
+  ['Elegí el cargador', 'Consultá la potencia, el conector y la disponibilidad.'],
+  ['Reservá tu turno', 'Elegí cuándo querés cargar.'],
+  ['Conectá y cargá', 'Seguí la carga y consultá la energía entregada.'],
+];
+---
+
 <section class="section wrap experience">
-  <div class="section-label">03 / UNA EXPERIENCIA SIMPLE</div>
-  <div class="section-heading">
-    <h2>
-      Una pausa.
-      <br />
-      Cuatro simples pasos.
-    </h2>
-    <a class="line-link" href="#app">
-      Probá la experiencia digital ↗
-    </a>
-  </div>
-  <div class="steps">
-    {[
-      ['01', 'Encontrá', 'Explorá la red y elegí una estación en tu camino.'],
-      ['02', 'Elegí', 'Consultá la potencia, el conector y la disponibilidad.'],
-      [
-        '03',
-        'Prepará',
-        'Reservá un turno o iniciá tu carga desde la experiencia digital propuesta.',
-      ],
-      ['04', 'Conectá', 'Seguí el estado de tu sesión y la energía entregada.'],
-    ].map(([n, title, copy]) => (
-      <article class="reveal">
-        <span>{n}</span>
-        <h3>{title}</h3>
-        <p>{copy}</p>
-      </article>
-    ))}
+  <div class="experience-layout">
+    <div>
+      <h2>
+        Cargá en cuatro pasos<span class="green-dot">.</span>
+      </h2>
+      <ol class="steps">
+        {steps.map(([title, copy], index) => (
+          <li>
+            <span class="step-number" aria-hidden="true">
+              {index + 1}
+            </span>
+            <div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <img
+      class="section-photo"
+      src={asset('media/conectar.webp')}
+      alt="Una persona conecta el cable de carga a su vehículo eléctrico"
+      width="960"
+      height="1200"
+      loading="lazy"
+      decoding="async"
+    />
   </div>
 </section>

@@ -1,4 +1,4 @@
-import { categories, stations, demoChargers } from '../data/locations';
+import { categories, stations } from '../data/locations';
 const $ = <T extends HTMLElement>(s: string) => document.querySelector<T>(s)!;
 const $$ = <T extends HTMLElement>(s: string) => [...document.querySelectorAll<T>(s)];
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -133,7 +133,7 @@ function filterStations() {
   }
   $('#network-status').textContent = list.length
     ? `${list.length} ubicaciones confirmadas`
-    : 'Ubicaciones por confirmar · Sin estaciones operativas publicadas';
+    : 'Las ubicaciones se publicarán a medida que se confirmen.';
 }
 $$<HTMLButtonElement>('[data-category]').forEach((button) =>
   button.addEventListener('click', () => {
@@ -157,7 +157,7 @@ const mapObserver = new IntersectionObserver(
         zoomControl: true,
         minZoom: 3,
         maxZoom: 14,
-      }).setView([-38.8, -64.5], 4);
+      }).setView([-34.61, -58.43], 10);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 19,
@@ -166,43 +166,12 @@ const mapObserver = new IntersectionObserver(
       filterStations();
     } catch {
       $('#network-map').textContent =
-        'Mapa no disponible sin conexión. La red está en desarrollo; todavía no hay ubicaciones confirmadas.';
+        'Mapa no disponible. La información de las primeras ubicaciones se publicará próximamente.';
     }
   },
   { rootMargin: '250px' },
 );
 mapObserver.observe($('#network-map'));
-type DemoState = 'map' | 'reserve' | 'session' | 'history';
-function showDemo(state: DemoState) {
-  (['map', 'reserve', 'session', 'history'] as DemoState[]).forEach(
-    (s) => ($(`#demo-${s}-state`).hidden = s !== state),
-  );
-  const focusTarget = $<HTMLElement>(`#demo-${state}-state h3`);
-  focusTarget.tabIndex = -1;
-  focusTarget.focus({ preventScroll: true });
-}
-$$<HTMLButtonElement>('[data-demo-charger]').forEach((b, i) =>
-  b.addEventListener('click', () => {
-    $$('[data-demo-charger]').forEach((el) => {
-      el.classList.toggle('selected', el === b);
-      el.setAttribute('aria-pressed', String(el === b));
-    });
-    $<HTMLButtonElement>('#demo-reserve').disabled = !demoChargers[i].available;
-    $('#demo-selection-status').textContent =
-      i === 0 ? 'Disponibilidad simulada' : 'Ocupado en esta demo. Elegí el cargador 01.';
-  }),
-);
-$('#demo-reserve').addEventListener('click', () => showDemo('reserve'));
-$('#demo-duration').addEventListener('change', () => {
-  $('#duration-summary').textContent = $<HTMLSelectElement>('#demo-duration').value + ' minutos';
-});
-$('#demo-confirm').addEventListener('click', () => {
-  $('#session-duration').textContent = $<HTMLSelectElement>('#demo-duration').value + ' min';
-  showDemo('session');
-});
-$('#demo-history').addEventListener('click', () => showDemo('history'));
-$('#nav-history').addEventListener('click', () => showDemo('history'));
-$$('[data-demo-back]').forEach((b) => b.addEventListener('click', () => showDemo('map')));
 const form = $<HTMLFormElement>('#contact-form');
 let submitting = false;
 const loadedAt = Date.now();
